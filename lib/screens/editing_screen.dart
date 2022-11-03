@@ -106,7 +106,7 @@ class _EditScreenState extends State<EditScreen> {
         await Provider.of<Products>(context, listen: false)
             .addProduct(_editProduct)
             .catchError((error) {
-          return showDialog<Null>(
+          return showDialog(
             context: context,
             builder: (ctx) => AlertDialog(
               title: const Text('An error occurred'),
@@ -262,7 +262,7 @@ class _EditScreenState extends State<EditScreen> {
                             border: Border.all(width: 1, color: Colors.grey),
                           ),
                           child: _imageUrlController.text.isEmpty
-                              ? Text('Url Image')
+                              ? const Text('Url Image')
                               : FittedBox(
                                   child: Image.network(
                                     _imageUrlController.text,

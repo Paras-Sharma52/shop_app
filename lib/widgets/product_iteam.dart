@@ -39,6 +39,7 @@ class ProductItem extends StatelessWidget {
           title: Text(
             product.title,
             textAlign: TextAlign.center,
+            style: const TextStyle(fontFamily: "Shalimar"),
           ),
           trailing: IconButton(
             icon: const Icon(Icons.shopping_cart),
@@ -47,7 +48,10 @@ class ProductItem extends StatelessWidget {
               ScaffoldMessenger.of(context).hideCurrentSnackBar();
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: const Text('Successfully Added'),
+                  content: const Text(
+                    'Successfully Added',
+                    style: TextStyle(fontFamily: "Shalimar"),
+                  ),
                   action: SnackBarAction(
                     label: 'UNDO',
                     onPressed: () {

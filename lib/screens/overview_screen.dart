@@ -27,7 +27,7 @@ class _ProductOverviewState extends State<ProductOverview> {
       setState(() {
         _isLoading = true;
       });
-      Provider.of<Products>(context).fetchAndSetProducts().then((_) {
+      Provider.of<Products>(context).fetchAndSetProducts(false).then((_) {
         setState(() {
           _isLoading = false;
         });
@@ -41,7 +41,14 @@ class _ProductOverviewState extends State<ProductOverview> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Shop Cart'),
+        elevation: 8,
+        iconTheme: const IconThemeData(color: Colors.purple),
+        backgroundColor: Colors.white,
+        title: const Text(
+          'Shop',
+          style: TextStyle(
+              color: Colors.black, fontFamily: "Shalimar", fontSize: 36),
+        ),
         actions: [
           PopupMenuButton(
             onSelected: (FilterOption selectedValue) {
@@ -53,14 +60,23 @@ class _ProductOverviewState extends State<ProductOverview> {
                 }
               });
             },
-            icon: const Icon(Icons.more_vert),
+            icon: const Icon(
+              Icons.more_vert,
+              color: Colors.purple,
+            ),
             itemBuilder: (_) => [
               const PopupMenuItem(
-                child: Text('Only Favorites'),
+                child: Text(
+                  'Only Favorites',
+                  style: TextStyle(fontFamily: "Shalimar"),
+                ),
                 value: FilterOption.favorites,
               ),
               const PopupMenuItem(
-                child: Text('Show All'),
+                child: Text(
+                  'Show All',
+                  style: TextStyle(fontFamily: "Shalimar"),
+                ),
                 value: FilterOption.all,
               )
             ],
@@ -72,7 +88,10 @@ class _ProductOverviewState extends State<ProductOverview> {
               child: ch!,
             ),
             child: IconButton(
-              icon: const Icon(Icons.shopping_cart),
+              icon: const Icon(
+                Icons.shopping_cart,
+                color: Colors.purple,
+              ),
               onPressed: () {
                 Navigator.of(context).pushNamed(Cartscreen.routeName);
               },

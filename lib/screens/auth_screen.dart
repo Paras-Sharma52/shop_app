@@ -40,11 +40,12 @@ class AuthScreen extends StatelessWidget {
               children: <Widget>[
                 Flexible(
                   child: Container(
-                    margin: const EdgeInsets.only(bottom: 20.0),
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 20),
                     padding: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 94.0),
+                        vertical: 16.0, horizontal: 70.0),
                     transform: Matrix4.rotationZ(-8 * pi / 180)
-                      ..translate(-10.0),
+                      ..translate(-20.0),
                     // ..translate(-10.0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
